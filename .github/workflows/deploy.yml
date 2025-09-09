@@ -12,25 +12,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set working directory
-        working-directory: Vamsi/customer-crm/customer-crm
-        run: echo "Moved into correct folder"
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: Vamsi/customer-crm/customer-crm
         run: npm install
 
       - name: Build React app
-        working-directory: Vamsi/customer-crm/customer-crm
         run: npm run build
 
       - name: Deploy to S3
-        working-directory: Vamsi/customer-crm/customer-crm
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --delete
@@ -40,3 +33,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-2
           SOURCE_DIR: build
+    
