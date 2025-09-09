@@ -57,7 +57,7 @@ function App() {
         boxShadow: "0 2px 12px #E4E8F0",
         padding: "32px"
       }}>
-        <h1 style={{ marginBottom: 28, fontWeight: 600 }}>Customer</h1>
+        <h1 style={{ marginBottom: 28, fontWeight: 600 }}>new_Customer</h1>
         <form 
           style={{ display: "flex", flexDirection: "column", gap: 16 }} 
           onSubmit={handleAdd}
