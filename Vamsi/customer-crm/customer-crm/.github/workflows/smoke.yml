@@ -1,0 +1,13 @@
+name: Smoke
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "It works! $GITHUB_REF $GITHUB_SHA"
